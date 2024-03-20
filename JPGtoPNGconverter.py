@@ -13,11 +13,11 @@ else:
     print(f'Folder {SAVE_folder} already exist')
 #loop through Pokedex
 for each_image in os.listdir(OLD_folder):
-    photo_name = each_image
+    photoName = each_image
     if each_image.lower().endswith('.jpg'):
-        image_path = os.path.join(OLD_folder,photo_name)
+        image_path = os.path.join(OLD_folder,photoName)
         img = Image.open(image_path)
-        save_path = os.path.join(SAVE_folder,photo_name[:-4]+ '.png')
+        save_path = os.path.join(SAVE_folder,photoName[:-4]+ '.png')
         img.save(save_path)
     else:
         print('Support JPG file only')
