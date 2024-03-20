@@ -3,7 +3,7 @@ import os
 from PIL import Image
 
 # grab first and second arguments
-open_folder = sys.argv[1]
+old_folder = sys.argv[1]
 save_folder = sys.argv[2]
 #check if new/ exists, if not create
 if os.path.isdir(save_folder) == False:
@@ -12,10 +12,10 @@ if os.path.isdir(save_folder) == False:
 else:
     print(f'Folder {save_folder} already exist')
 #loop through Pokedex
-for image in os.listdir(open_folder):
+for image in os.listdir(old_folder):
     photo_name = image
     if image.lower().endswith('.jpg'):
-        image_path = os.path.join(open_folder,photo_name)
+        image_path = os.path.join(old_folder,photo_name)
         img = Image.open(image_path)
         save_path = os.path.join(save_folder,photo_name[:-4]+ '.png')
         img.save(save_path)
