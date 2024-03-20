@@ -17,6 +17,7 @@ for each_image in os.listdir(OLD_folder):
     if each_image.lower().endswith('.jpg'):
         image_path = os.path.join(OLD_folder,photoName)
         img = Image.open(image_path)
+
         save_path = os.path.join(SAVE_folder,photoName[:-4]+ '.png')
         img.save(save_path)
     else:
