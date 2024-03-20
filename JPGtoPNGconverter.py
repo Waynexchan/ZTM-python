@@ -3,21 +3,21 @@ import os
 from PIL import Image
 
 # grab first and second arguments
-old_folder = sys.argv[1]
-save_folder = sys.argv[2]
+OLD_folder = sys.argv[1]
+SAVE_folder = sys.argv[2]
 #check if new/ exists, if not create
-if os.path.isdir(save_folder) == False:
-    os.mkdir(save_folder)
-    print(f'Folder {save_folder} was created')
+if os.path.isdir(SAVE_folder) == False:
+    os.mkdir(SAVE_folder)
+    print(f'Folder {SAVE_folder} was created')
 else:
-    print(f'Folder {save_folder} already exist')
+    print(f'Folder {SAVE_folder} already exist')
 #loop through Pokedex
-for image in os.listdir(old_folder):
+for image in os.listdir(OLD_folder):
     photo_name = image
     if image.lower().endswith('.jpg'):
-        image_path = os.path.join(old_folder,photo_name)
+        image_path = os.path.join(OLD_folder,photo_name)
         img = Image.open(image_path)
-        save_path = os.path.join(save_folder,photo_name[:-4]+ '.png')
+        save_path = os.path.join(SAVE_folder,photo_name[:-4]+ '.png')
         img.save(save_path)
     else:
         print('Support JPG file only')
