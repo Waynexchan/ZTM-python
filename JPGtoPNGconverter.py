@@ -12,9 +12,9 @@ if os.path.isdir(SAVE_folder) == False:
 else:
     print(f'Folder {SAVE_folder} already exist')
 #loop through Pokedex
-for image in os.listdir(OLD_folder):
-    photo_name = image
-    if image.lower().endswith('.jpg'):
+for each_image in os.listdir(OLD_folder):
+    photo_name = each_image
+    if each_image.lower().endswith('.jpg'):
         image_path = os.path.join(OLD_folder,photo_name)
         img = Image.open(image_path)
         save_path = os.path.join(SAVE_folder,photo_name[:-4]+ '.png')
